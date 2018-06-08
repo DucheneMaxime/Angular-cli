@@ -3,3 +3,9 @@
 <app-interpolate></app-interpolate>
 
 <app-variable></app-variable>
+
+<ul>
+    <li *ngFor="let formation of listFormations; first as f; last as l; even as e">
+        <app-formation-item [formation]="formation"></app-formation-item>
+    </li>
+</ul>
