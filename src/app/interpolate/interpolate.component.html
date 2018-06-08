@@ -21,3 +21,15 @@
 <p>
   Optional: {{formationJS?.nom}}
 </p>
+
+<p [style.color]="color">
+  Test de binding
+</p>
+
+<button (click)="dispa()" type="button">TEST</button>
+
+<p [hidden]="isHidden">Texte à masquer</p>
+
+<p (mouseover)="mouseover()" (mouseout)="mouseout()">Mousover</p>
+
+<p [hidden]="toHide">TO HIDE</p>
