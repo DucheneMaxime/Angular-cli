@@ -49,6 +49,9 @@ export class InterpolateComponent implements OnInit {
 export class Formation {
   nom:string;
   description: string;
+  prix: number=10;
+  dateDeb: Date = new Date(2018, 3, 3);
+  dateFin: Date = new Date(2018, 6, 29);
 
   constructor(nom, description){
     this.nom = nom;
