@@ -5,3 +5,20 @@
 <div>
   <button (click)="customVariable.focus()">Focus the input</button>
 </div>
+
+<div *ngIf="isDisplay; else title"><p>Formation Angular</p></div>
+<ng-template #title><p>Nom de la formation</p></ng-template>
+
+<button type="button" (click)="toHide()">Choose one</button>
+
+<div [ngSwitch]="listFormations.length">
+  <p *ngSwitchCase="0">Aucune formation disponibles</p>
+  <p *ngSwitchCase="1">Une formation disponible</p>
+  <p *ngSwitchDefault>Formations disponibles :</p>
+</div>
+
+<ul>
+  <li *ngFor="let formation of listFormations; index as i">
+    <p [style.background-color]="backgroundColorListe(i)" [style.color]="colorList(i)">{{i}} - {{formation.nom}}</p>
+  </li>
+</ul>
