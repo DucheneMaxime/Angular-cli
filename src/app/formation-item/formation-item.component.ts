@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {Formation } from '../interpolate/interpolate.component';
 
 @Component({
@@ -11,9 +11,16 @@ export class FormationItemComponent implements OnInit {
   @Input()
   formation: Formation;
 
+  @Output()
+  formationSelected:EventEmitter<Formation> = new EventEmitter<Formation>();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  selectFormation(){
+    this.formationSelected.emit(this.formation);
   }
 
 }
