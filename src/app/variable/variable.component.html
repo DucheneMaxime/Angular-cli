@@ -18,7 +18,7 @@
 </div>
 
 <ul>
-  <li *ngFor="let formation of listFormations; index as i">
-    <p [style.background-color]="backgroundColorListe(i)" [style.color]="colorList(i)">{{i}} - {{formation.nom}}</p>
+  <li *ngFor="let formation of listFormations; first as f; last as l; even as e">
+    <p [ngClass]="{'greyBackground': e, 'first': f, 'last': l}">{{i}} - {{formation.nom}}</p>
   </li>
 </ul>
