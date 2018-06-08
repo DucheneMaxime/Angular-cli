@@ -11,6 +11,10 @@ export class InterpolateComponent implements OnInit {
   formation:Formation = new Formation("test formation", "ceci est une formation");
   formationJS:Formation;
 
+  color:string = "green";
+  isHidden: boolean = false;
+  toHide: boolean = false;
+
   constructor() { }
 
   getFullName(){
@@ -20,9 +24,26 @@ export class InterpolateComponent implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       this.formationJS = new Formation('Module JavaScript', 'description');
-    }, 3000)
+    }, 3000);
+    setInterval(() => {
+      if(this.color=="green")
+        this.color = "red";
+      else
+        this.color="green";
+    }, 1000)
   }
 
+  dispa(){
+    this.isHidden = !this.isHidden;
+  }
+
+  mouseover(){
+    this.toHide = !this.toHide;
+  }
+
+  mouseout(){
+    this.toHide = !this.toHide;
+  }
 }
 
 export class Formation {
